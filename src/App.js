@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import PriceContextProvider from './context/PriceContext'
+import { Main } from './pages/main';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PriceContextProvider>
+      <div className="flex flex-col items-center">
+        <header className="App-header">
+          <h1>Tezos Defi</h1>
+        </header>
+        <Main />
+      </div>
+    </PriceContextProvider>
   );
 }
 
